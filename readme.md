@@ -1,4 +1,4 @@
-To BeginL 
+To Begin: 
 Download the file compile_sheets.py
 
 Now, let's say you have all the original xlsx files in a folder called 'Data'

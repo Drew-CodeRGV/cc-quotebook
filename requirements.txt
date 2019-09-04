@@ -1,0 +1,4 @@
+# to install requirements run: pip install -r requirements.txt
+et-xmlfile==1.0.1
+jdcal==1.4.1
+openpyxl==2.6.3

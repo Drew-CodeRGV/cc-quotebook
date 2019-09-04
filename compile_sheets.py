@@ -1,10 +1,11 @@
+#!/usr/bin/env python
+#
+#
 # Requested by Drew-CodeRGV
 # Created by ldartez
 # 
 #
 #
-#!/usr/bin/env python
-
 # compile master sheet with required information
 # master sheet columns: 
 #   * Manufacturer

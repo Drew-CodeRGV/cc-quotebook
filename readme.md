@@ -8,6 +8,12 @@ you can run the script with:
 
 ```
 python compile_sheets.py -o master.xlsx data/*
+# OR
+python compile_sheets.py -o /path/to/master.xlsx data
+# OR (if you have other files in other directories/places)
+python compile_sheets.py -o /path/to/master.xlsx data /path/to/another/sheet.xlsx /path/to/some/other/data/dir
 ```
+
+
 
 That will generate a file called `master.xlsx` that has all the info.

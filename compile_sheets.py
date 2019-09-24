@@ -220,15 +220,29 @@ def parse_workbook_snapav(wbin):
    
 if __name__ == "__main__":
     import argparse
-    from os.path import basename
+    from os.path import abspath, basename, isdir, isfile, exists, join
+    from os import walk, getcwd
     from openpyxl import load_workbook, Workbook
+    from glob import glob
 
     p = argparse.ArgumentParser()
-    p.add_argument('-o', '--output', default='master.xlsx')
+    p.add_argument('-o', '--output', default='master.xlsx',
+            help='path to output file')
     p.add_argument('infiles', nargs='+')
     args = p.parse_args()
-
-    fnames = args.infiles
+    
+    fnames = []
+    for fin in args.infiles:
+        if not exists(fin):
+            raise ValueError("file not found: {}".format(fin))
+        elif isdir(fin):
+            flist = glob(join(fin,'*.xlsx'))
+            for f in flist:
+                if not f in fnames:
+                    fnames.append(f)
+        elif isfile(fin):
+            if not fin in fnames:
+                fnames.append(fin)
     dout = []
     for f in fnames:
         if 'aruba' in basename(f).lower():
